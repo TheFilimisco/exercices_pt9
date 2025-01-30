@@ -35,6 +35,7 @@ public class ManagementNoteGrade {
         for (Student student: students){
             sumTotal+= (int) student.getNote_grade();
         }
+
         return sumTotal;
     }
 
