@@ -1,4 +1,4 @@
-package notegradesdam.models;
+package notesDAM.models;
 
 public class Student {
     private int idStudent;

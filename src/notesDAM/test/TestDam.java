@@ -1,10 +1,7 @@
-package notegradesdam.test;
+package notesDAM.test;
 
-import notegradesdam.models.ManagementNoteGrade;
-import notegradesdam.models.Student;
+import notesDAM.models.ManagementNoteGrade;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class TestDam {

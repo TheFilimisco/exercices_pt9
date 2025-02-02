@@ -1,7 +1,6 @@
-package notegradesdam.models;
+package notesDAM.models;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class ManagementNoteGrade {
