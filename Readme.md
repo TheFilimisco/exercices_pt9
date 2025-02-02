@@ -45,3 +45,24 @@ car a barat).
    - 8. mostrar tots els jugadors actuals.
    - 9. Creeu una classe TestPlayerManager per provar les funcionalitats anteriors, crea
         5 jugadors.
+
+## 4. Sistema de gestió de llibres (_[managementbooks](src/managementbooks)_)
+
+1. Implementeu un classe anomenada Book amb els atributs següents: id (int), title
+   (String), author (String), rating (int, valor entre 0 i 5 que representa la valoració d’un
+   llibre), i els mètodes necessaris.
+2. Classe BookManager: creeu una classe BookManager amb les funcionalitats
+   següents:
+      1. afegir un llibre a la llista.
+      2. mostrar tots els llibres actuals.
+      3. retornar un llibre en funció del títol del llibre.
+      4. retornar un llibre en funció del autor del llibre.
+      5. actualitzar el rating d'un llibre.
+      6. retornar una llista ordenada descendent dels llibres en funció dels ratings.
+      7. retornar una llista dels millors N llibres en funció dels ratings.
+      8. retornar una llista amb els llibres amb rating més gran que un valor minRating.
+      9. eliminar un llibre de la llista en funció del id del llibre.
+3. Creeu una classe TestBookManager per provar les funcionalitats anteriors, crea 5
+   llibres. S’ha de mostrar que totes les funcionalitats funcionen correctament. Afegiu println’s
+   perquè es vegi clarament el que s’està fent.
+
