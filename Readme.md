@@ -66,3 +66,15 @@ car a barat).
    llibres. S’ha de mostrar que totes les funcionalitats funcionen correctament. Afegiu println’s
    perquè es vegi clarament el que s’està fent.
 
+# HashMap 
+
+## 1. Mòbils (_[cellphones](src/cellphones)_)
+
+-   Crea un Hashmap capaç d'inventariar tots els mòbils dels alumnes de DAM1. El Hashmap
+    serà una estructura conjuntMobils<dni, Mobil>. Dni serà un String i classe Mobil està
+    compost per una Marca, un model i un número.
+-   Crea les següents opcions:
+    - a) Afegir mòbil. (vigilar amb dni's repetits).
+    - b) Treure mòbil.
+    - c) Buscar un mòbil a partir d'un dni.
+    - d) Buscar un dni a partir del número de mòbil.
