@@ -68,6 +68,13 @@ car a barat).
 
 # HashMap 
 
+- put(K key, V value): Adds a key-value pair.
+- get(Object key): Retrieves the value for a given key.
+- remove(Object key): Removes a key-value pair.
+- containsKey(Object key): Checks if a key exists.
+- clear(): Removes all mappings.
+- size(): Returns the number of entries.
+
 ## 1. Mòbils (_[cellphones](src/cellphones)_)
 
 -   Crea un Hashmap capaç d'inventariar tots els mòbils dels alumnes de DAM1. El Hashmap
@@ -78,3 +85,16 @@ car a barat).
     - b) Treure mòbil.
     - c) Buscar un mòbil a partir d'un dni.
     - d) Buscar un dni a partir del número de mòbil.
+
+## 2. Assignació de dorsals d'un equip de futbol. (_[footballteam](src/footballteam)_)
+
+- Cal que definim una estructura de Hashmap <Dorsal, Jugador>, Un dorsal és només un
+    enter, mentre que un Jugador és de la classe Jugador. Un Jugador conté un nom, una edat i
+    una posició.
+- Feu un programa capaç de:
+    - a) Introduir Jugadors al Hashmap.
+    - b) Buscar un jugador per dorsal en el Hashmap.
+    - c) Buscar un jugador per nom en el Hashmap.
+    - d) Llistar Jugadors ordenats per número.
+    - e) Llistar jugadors per edat.
+    - f) Llistar jugadors per posició.
