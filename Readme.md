@@ -98,3 +98,45 @@ car a barat).
     - d) Llistar Jugadors ordenats per número.
     - e) Llistar jugadors per edat.
     - f) Llistar jugadors per posició.
+
+## 3. Sistema de matrícula del curs (_[managementenrollment](src/managementenrollment)_)
+1. Classe Student: creeu una classe d'estudiant amb els atributs següents:
+   1. IdStudent: Identificador únic de l'estudiant.
+   2. Name: Nom de l'alumne.
+   3. Age: Edat de l'alumne.
+2. Classe CourseManager: creeu una classe CourseManager amb les funcionalitats
+   següents:
+   1. enrollStudent(Student student): inscriu un estudiant al curs.
+   2. unenrollStudent(String id): anul·la la matrícula d'un estudiant del curs en funció del
+      seu
+      identificador.
+   3. findStudentById(String id): cerca i retorna un objecte d'estudiant pel seu
+      identificador.
+   4. listAllStudents(): enumera tots els estudiants inscrits al curs.
+
+## 4. SCRUM_HashMap (_[scrumhashmap](src/scrumhashmap)_)
+
+Volem gestionar els grups de SCRUM de DAM1 en un HashMap amb els noms dels equips i
+els alumnes membres de cada equip.
+- 2.1 Classe Student. Implementeu la classe Student amb atributs id (String) i nom
+(String) amb els mètodes necessaris.
+- 2.2 Classe Scrum. Implementeu la classe Scrum amb un Map<String,
+ArrayList<Student>> (o HashMap) com atribut, els mètodes necessaris i les següents
+funcionalitats:
+  1. public boolean addProject(String projectName): aquest mètode ens permetrà
+     afegir nous projectes. Si el projecte existeix, s’ha d’informar que ja existeix.
+  2. public boolean addStudent(String projectName, Student student): afegir un nou
+     alumne a un projecte. Si el projecte no existeix, es crea un nou projecte i s’afegeix
+     l’alumne.
+  3. public boolean removeProject(String projectName): esborrar un projecte. Si el
+     projecte no existeix, s’ha d’informar que no existeix.
+  4. public void showProjects(): mostrar per pantalla els projectes actuals i els
+     membres de cada projecte.
+  5. public boolean removeStudent(String projectName, String studentId): esborrar un
+     alumne del projecte. S’ha de comprovar que el projecte existeix, i que el alumne
+     forma part del projecte. Informar dels possibles casos.
+- Creeu una classe TestScrum per provar les funcionalitats anteriors. S’ha de mostrar que
+  totes les funcionalitats funcionen correctament. Afegiu println’s perquè es vegi clarament el
+  que s’està fent.
+
+

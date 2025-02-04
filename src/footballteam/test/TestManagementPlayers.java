@@ -10,6 +10,8 @@ public class TestManagementPlayers {
         managementPlayers.addPlayer(2, new Player("Luis",21,"Midfielder"));
         managementPlayers.addPlayer(3, new Player("Ramon",21,"Defender"));
         managementPlayers.addPlayer(3, new Player("Ramon",21,"Defender"));
+        managementPlayers.addPlayer(60, new Player("Ramon2",21,"Defender"));
+        managementPlayers.addPlayer(30, new Player("Ramon3",21,"Defender"));
 
         System.out.println("==============Show All Players=======");
         managementPlayers.showAllPlayers();

@@ -33,19 +33,21 @@ public class ManagementPlayers {
     }
 
     public Player getPlayerByName(String namePlayer){
-        var player = new Player();
-        player = null;
         for (Map.Entry<Integer, Player> item : playersHashMap.entrySet()){
             if (item.getValue().getName().equals(namePlayer)){
-                player= item.getValue();
-                break;
+                return item.getValue();
             }
         }
-        return player;
+        return null;
     }
 
     public void showAllPlayers(){
-        playersHashMap.forEach((key, value) -> System.out.println(key + ": " + value));
+        List<Map.Entry<Integer, Player>> newListPlayers = new ArrayList<>(playersHashMap.entrySet());
+        newListPlayers.sort(Map.Entry.comparingByKey());
+        for (Map.Entry<Integer, Player> entry : newListPlayers) {
+            System.out.println(entry.getKey() + ":" + entry.getValue());
+        }
+
     }
 
     public void showAllPlayerByAge(){
@@ -58,7 +60,6 @@ public class ManagementPlayers {
 
     public void showAllPlayersByPosition(){
         List<Map.Entry<Integer, Player>> newListPlayers = new ArrayList<>(playersHashMap.entrySet());
-
         newListPlayers.sort(Comparator.comparing(entry-> entry.getValue().getPosition()));
         for (Map.Entry<Integer, Player> entry : newListPlayers) {
             System.out.println(entry.getValue());

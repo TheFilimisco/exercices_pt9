@@ -2,6 +2,8 @@ package ships.models;
 
 import java.util.*;
 
+
+
 public class ManagementShips {
     private ArrayList<Ship> ships;
 
@@ -60,61 +62,30 @@ public class ManagementShips {
     }
 
     public Ship getShip(int id){
-        var getShipByArray = new Ship();
         for (Ship ship : ships){
             if (ship.getIdentifiedShip() == id){
-                getShipByArray = ship;
-                break;
-            } else {
-                getShipByArray = null;
+                return ship;
             }
         }
-        return getShipByArray;
+        return null;
     }
 
     public void getAllShips(){
-        ships.sort(shipComparatorById);
+        ships.sort(Ship.shipComparatorById);
         for (Ship ship : ships) System.out.println(ship);
     }
 
     public void getAllShipsByOld(){
-        ships.sort(shipComparatorByOld);
+        ships.sort(Ship.shipComparatorByOld);
         for (Ship ship : ships) System.out.println(ship);
     }
 
     public void getAllShipsByLexicographic(){
-        ships.sort(shipComparatorByName.thenComparing(shipComparatorByPrice));
+        ships.sort(Ship.shipComparatorByName.thenComparing(Ship.shipComparatorByPrice));
         for (Ship ship : ships) System.out.println(ship);
     }
 
 
-    public Comparator<Ship> shipComparatorByOld = new Comparator<Ship>() {
-        @Override
-        public int compare(Ship a1, Ship a2) {
-            return Integer.compare(a1.getOldShip(), a2.getOldShip());
-        }
-    };
-
-    public Comparator<Ship> shipComparatorById = new Comparator<Ship>() {
-        @Override
-        public int compare(Ship a1, Ship a2) {
-            return Integer.compare(a1.getIdentifiedShip(), a2.getIdentifiedShip());
-        }
-    };
-
-    public Comparator<Ship> shipComparatorByName = new Comparator<Ship>() {
-        @Override
-        public int compare(Ship a1, Ship a2) {
-            return CharSequence.compare(a1.getNameShip(), a2.getNameShip());
-        }
-    };
-
-    public Comparator<Ship> shipComparatorByPrice = new Comparator<Ship>() {
-        @Override
-        public int compare(Ship a1, Ship a2) {
-            return Double.compare(a1.getPriceShip(), a2.getPriceShip());
-        }
-    };
 
     @Override
     public String toString() {

@@ -1,5 +1,7 @@
 package ships.models;
 
+import java.util.Comparator;
+
 public class Ship {
     private int identifiedShip;
     private String nameShip;
@@ -49,6 +51,34 @@ public class Ship {
     public void setOldShip(int oldShip) {
         this.oldShip = oldShip;
     }
+
+    public static Comparator<Ship> shipComparatorByOld = new Comparator<Ship>() {
+        @Override
+        public int compare(Ship a1, Ship a2) {
+            return Integer.compare(a1.getOldShip(), a2.getOldShip());
+        }
+    };
+
+    public static Comparator<Ship> shipComparatorById = new Comparator<Ship>() {
+        @Override
+        public int compare(Ship a1, Ship a2) {
+            return Integer.compare(a1.getIdentifiedShip(), a2.getIdentifiedShip());
+        }
+    };
+
+    public static Comparator<Ship> shipComparatorByName = new Comparator<Ship>() {
+        @Override
+        public int compare(Ship a1, Ship a2) {
+            return CharSequence.compare(a1.getNameShip(), a2.getNameShip());
+        }
+    };
+
+    public static Comparator<Ship> shipComparatorByPrice = new Comparator<Ship>() {
+        @Override
+        public int compare(Ship a1, Ship a2) {
+            return Double.compare(a1.getPriceShip(), a2.getPriceShip());
+        }
+    };
 
     @Override
     public String toString() {
