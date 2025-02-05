@@ -26,45 +26,39 @@ public class PlayerManager {
     }
 
     public void addPlayer(Player player){
+        if (players.contains(player)){
+            System.out.println("Don't possible");
+            return;
+        }
         players.add(player);
         System.out.println("Successful");
     }
 
     public void deletePlayer(String namePlayer){
-        var notice = "";
-        for (Player player: players){
-            if (player.getName().equals(namePlayer)){
-                players.remove(player);
-                notice = "Successful";
-                break;
-            } else {
-                notice = "Dont found";
-            }
-        }
-        System.out.println(notice);
+        var newPlayer = players.removeIf( player -> player.getName().equals(namePlayer));
+        var message = newPlayer ? "Removed: " + namePlayer : "Don't founded";
+        System.out.println(message);
     }
 
     public Player getPlayer(String namePlayer){
-        var newPlayer = new Player();
-        for (Player player: players) {
+        for (Player player: players){
             if (player.getName().equals(namePlayer)){
-                newPlayer = player;
-                break;
-            } else {
-                newPlayer = null;
+                return player;
+
             }
         }
-        return newPlayer;
+        return null;
     }
 
-    public Player setScorePlayer(String namePlayer, int newScorePlayer){
-        var player = getPlayer(namePlayer);
-        if (player==null){
-            return null;
+    public void setScorePlayer(String namePlayer, int newScorePlayer){
+        if (getPlayer(namePlayer)==null){
+            System.out.println("Don't possible!");
+            return;
         }
-        player.setScore(newScorePlayer);
-        return player;
+        getPlayer(namePlayer).setScore(newScorePlayer);
+        System.out.println("Updated!: " + namePlayer);
     }
+
 
     public ArrayList<Player> getBestPlayers(int scoredRange){
         ArrayList<Player> bestPlayers = new ArrayList<>();
@@ -90,16 +84,16 @@ public class PlayerManager {
         if (!players.isEmpty()) {
             Player bestPlayer = Collections.max(players, playerComparatorByScored);
             System.out.println("Best Player: " + bestPlayer);
-        } else {
-            System.out.println("No players available.");
+            return;
         }
+        System.out.println("No players available.");
     }
 
 
     public void getAllPlayers(){
+        players.sort(playerComparatorByScored);
         for (Player player: players)System.out.println(player);
     }
-
     public Comparator<Player> playerComparatorByScored = Comparator.comparingInt(Player::getScore);
 
 }

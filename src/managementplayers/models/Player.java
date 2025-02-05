@@ -1,5 +1,7 @@
 package managementplayers.models;
 
+import java.util.Objects;
+
 public class Player {
     private String name;
     private int score;
@@ -26,6 +28,19 @@ public class Player {
 
     public void setScore(int score) {
         this.score = score;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Player player = (Player) o;
+        return score == player.score && Objects.equals(name, player.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, score);
     }
 
     @Override

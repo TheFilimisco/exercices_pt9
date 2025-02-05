@@ -1,6 +1,9 @@
 package scrumhashmap.models;
 
-public class Student {
+import java.util.ArrayList;
+import java.util.Objects;
+
+public class Student extends ArrayList<Student> {
     private String id;
     private String name;
 
@@ -20,12 +23,18 @@ public class Student {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Student student = (Student) o;
+        return Objects.equals(id, student.id);
     }
 
-    public void setName(String name) {
-        this.name = name;
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name);
     }
 
     @Override
