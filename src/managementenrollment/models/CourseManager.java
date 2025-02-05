@@ -27,7 +27,7 @@ public class CourseManager {
     }
 
     public void enrollmentStudent(Student student){
-        studentsHashMap.put(student.getNameStudent()+student.getAgeStudent(),student);
+        studentsHashMap.put(student.getIdStudent(),student);
         System.out.println("Successfully");
     }
 
@@ -51,10 +51,6 @@ public class CourseManager {
             System.out.println(entry.getKey() + ":" + entry.getValue());
         }
     }
-
-
-
-
 
 
 }

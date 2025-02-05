@@ -6,10 +6,10 @@ import footballteam.models.Player;
 public class TestManagementPlayers {
     public static void main(String[] args) {
         ManagementPlayers  managementPlayers = new ManagementPlayers();
-        managementPlayers.addPlayer(1, new Player("Joaquin",23,"Forward"));
+        managementPlayers.addPlayer(15, new Player("Joaquin",23,"Forward"));
         managementPlayers.addPlayer(2, new Player("Luis",21,"Midfielder"));
         managementPlayers.addPlayer(3, new Player("Ramon",21,"Defender"));
-        managementPlayers.addPlayer(3, new Player("Ramon",21,"Defender"));
+        managementPlayers.addPlayer(100, new Player("Ramon",21,"Defender"));
         managementPlayers.addPlayer(60, new Player("Ramon2",21,"Defender"));
         managementPlayers.addPlayer(30, new Player("Ramon3",21,"Defender"));
 
