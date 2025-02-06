@@ -50,12 +50,6 @@ public class Scrum {
         return false;
     }
 
-    public void showProjects(){
-        ArrayList<Map.Entry<String, ArrayList<Student>>> listScrum = new ArrayList<>(listsScrumHashMap.entrySet());
-        listScrum.sort(Map.Entry.comparingByKey());
-        listScrum.forEach(System.out::println);
-    }
-
     public boolean removeStudent(String projectName,String studentId){
         if (listsScrumHashMap.containsKey(projectName)){
             for (ArrayList<Student> students: listsScrumHashMap.values()) {
@@ -68,6 +62,12 @@ public class Scrum {
             }
         }
         return false;
+    }
+
+    public void showProjects(){
+        ArrayList<Map.Entry<String, ArrayList<Student>>> listScrum = new ArrayList<>(listsScrumHashMap.entrySet());
+        listScrum.sort(Map.Entry.comparingByKey());
+        listScrum.forEach(System.out::println);
     }
 
     @Override

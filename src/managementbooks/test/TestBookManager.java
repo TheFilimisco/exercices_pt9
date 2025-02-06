@@ -10,32 +10,14 @@ import java.util.Scanner;
 public class TestBookManager {
     public static void main(String[] args) {
         BookManager bookManager = new BookManager();
+        Scanner input = new Scanner(System.in);
+
         bookManager.addBook(new Book("Alice'world","Idk",3));
         bookManager.addBook(new Book("Hombre tiza","Idasdask",5));
         bookManager.addBook(new Book("It","asdas",4));
         bookManager.addBook(new Book("A traves de mi ventana","uhusd",3));
         bookManager.addBook(new Book("Crepusculo","asffs",4));
         bookManager.addBook(new Book("Crepusculo2","asffs",4));
-
-
-
-
-//        System.out.println("===================Set Value a Book==========");
-//        bookManager.setBook("It", 2);
-//        bookManager.getAllBooks();
-//        bookManager.setBook("ASDSADASD", 2);
-//        bookManager.getAllBooks();
-//        System.out.println("===================Order By Rating==========");
-//        bookManager.getAllBooksByRating();
-//        System.out.println("===================Get Books by Min Rating==========");
-//        System.out.println(bookManager.getBooksByMinRating(4));
-//        System.out.println("===================Delete Book==========");
-//        bookManager.deleteBook(1);
-//        bookManager.getAllBooks();
-//        PlayerManager playerManager = new PlayerManager();
-
-
-        Scanner input = new Scanner(System.in);
 
         var running = true;
         while (running){

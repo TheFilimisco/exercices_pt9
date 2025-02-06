@@ -11,15 +11,13 @@ public class TestShips {
         ManagementShips managementShips = new ManagementShips();
         Scanner input = new Scanner(System.in);
 
-        managementShips.addNewShip("La pinta",20000,3);
-        managementShips.addNewShip("La Consentida",30000,4);
-        managementShips.addNewShip("La Consentida",50000,4);
-        managementShips.addNewShip("El Buen Marino",4400,10);
-        managementShips.addNewShip("Terrible Emperador",22200,2);
-        managementShips.addNewShip("Olvidable",50000,1);
+        managementShips.addNewShip(new Ship("La Consentida",30000,4));
+        managementShips.addNewShip(new Ship("La Consentida",50000,4));
+        managementShips.addNewShip(new Ship("La El Buen Marino",50000,10));
+        managementShips.addNewShip(new Ship("Terrible Emperador",22200,2));
+        managementShips.addNewShip(new Ship("Olvidable",50000,1));
 
         var running = true;
-
         while (running){
 
             System.out.println("""
@@ -46,7 +44,7 @@ public class TestShips {
                     var newPrice = input.nextDouble();
                     System.out.print("Enter your Old: ");
                     var newOld = input.nextInt();
-                    managementShips.addNewShip(newName,newPrice,newOld);
+                    managementShips.addNewShip(new Ship(newName,newPrice,newOld));
                     break;
                 case 2:
                     input.nextLine();

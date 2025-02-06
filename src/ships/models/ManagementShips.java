@@ -24,9 +24,8 @@ public class ManagementShips {
     }
 
 
-    public void addNewShip(String name, double price, int old){
-        var newShip = new Ship(name,price,old);
-        ships.add(newShip);
+    public void addNewShip(Ship ship){
+        ships.add(ship);
         System.out.println("Successful");
     }
 

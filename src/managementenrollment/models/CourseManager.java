@@ -27,6 +27,10 @@ public class CourseManager {
     }
 
     public void enrollmentStudent(Student student){
+        if (studentsHashMap.containsKey(student.getIdStudent())){
+            System.out.println("This id exist: " + student.getIdStudent());
+            return;
+        }
         studentsHashMap.put(student.getIdStudent(),student);
         System.out.println("Successfully");
     }
@@ -34,19 +38,25 @@ public class CourseManager {
     public void removeStudentById(String id){
         if (!studentsHashMap.containsKey(id)){
             System.out.println("Don't exist that id!");
-        } else System.out.println(studentsHashMap.remove(id));
+            return;
+        }
+        System.out.println(studentsHashMap.remove(id));
 
     }
 
     public void findStudentById(String id){
         if (!studentsHashMap.containsKey(id)){
             System.out.println("Don't exist that id!");
-        } else System.out.println(studentsHashMap.get(id));
+            return;
+        }
+        System.out.println(studentsHashMap.get(id));
     }
 
     public void showAllStudents(){
         List<Map.Entry<String, Student>> newListStudents = new ArrayList<>(studentsHashMap.entrySet());
+
         newListStudents.sort(Map.Entry.comparingByKey());
+
         for (Map.Entry<String, Student> entry : newListStudents) {
             System.out.println(entry.getKey() + ":" + entry.getValue());
         }
