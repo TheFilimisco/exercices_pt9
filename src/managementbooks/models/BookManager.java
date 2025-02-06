@@ -25,55 +25,54 @@ public class BookManager {
     }
 
     public void addBook(Book book){
+        if (books.contains(book)){
+            System.out.println("This book exist!");
+            return;
+        }
         books.add(book);
         System.out.println("Successful");
     }
 
     public Book getBookByTitle(String title){
-        var newBook = new Book();
-        for (Book book: books) {
+        for (Book book: books){
             if (book.getTitle().equals(title)){
-                newBook = book;
-                break;
-            } else {
-                newBook = null;
+                System.out.println(book);
+                return book;
             }
         }
-        return newBook;
+        System.out.println("Don't founded!");
+        return null;
     }
 
-    public Book getBookByAuthor(String author){
-        var newBook = new Book();
-        for (Book book: books) {
+    public void getBooksByAuthor(String author){
+        var authorBooks = new ArrayList<Book>();
+        for (Book book: books){
             if (book.getAuthor().equals(author)){
-                newBook = book;
-                break;
-            } else {
-                newBook = null;
+                authorBooks.add(book);
             }
         }
-        return newBook;
+        authorBooks.forEach(System.out::println);
     }
 
     public void setBook(String searchBook, int newValue){
-        if (getBookByAuthor(searchBook) != null){
-            getBookByAuthor(searchBook).setRating(newValue);
-            System.out.println("Successfully");
-        } else if(getBookByTitle(searchBook) != null) {
-            getBookByTitle(searchBook).setRating(newValue);
-            System.out.println("Successfully");
-        } else {
-            System.out.println("Don't found");
+        var verified = getBookByTitle(searchBook);
+        if (verified != null){
+            verified.setRating(newValue);
+            System.out.println(verified);
+            return;
         }
+        System.out.println("Don't possible");
     }
 
     public void getAllBooksByRating(){
         books.sort(bookComparatorByRating.reversed());
-        getAllBooks();
-        books.sort(bookComparatorById);
+        books.forEach(System.out::println);
     }
 
-    public void getBooksByNumber(int numberGetBooks){
+    public void getNBooksByRating(int numberGetBooks){
+        books.sort(bookComparatorByRating.reversed());
+        var subList = books.subList(0,numberGetBooks);
+        subList.forEach(System.out::println);
 
     }
 
@@ -84,19 +83,22 @@ public class BookManager {
                 newBooks.add(book);
             }
         }
+        newBooks.forEach(System.out::println);
         return newBooks;
     }
 
     public void deleteBook(int id){
-        books.removeIf(book -> book.getId() == id);
-        System.out.println("Successfully");
+        var verified = books.removeIf(book -> book.getId() == id);
+        var message = verified ? "Deleted: " + id : "Don't founded";
+        System.out.println(message);
     }
 
     public Comparator<Book> bookComparatorByRating = Comparator.comparingInt(Book::getRating);
     public Comparator<Book> bookComparatorById = Comparator.comparingInt(Book::getId);
 
     public void getAllBooks(){
-        for (Book book: books) System.out.println(book);
+        books.sort(bookComparatorById);
+        books.forEach(System.out::println);
     }
 
     @Override

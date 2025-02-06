@@ -31,11 +31,10 @@ public class TestPlayerManager {
                     3. Get a Player by Name
                     4. Update Player's Scored
                     5. Get N best player's list by Scored
-                    6. Get best player's list by Scored that MinNumber
-                    7. Get Ships by Lexicographic
-                    8. Get Player best Scored
-                    9. Show All Players
-                    10. Leave
+                    6. Get best players' list by Scored
+                    7. Get Player best Scored
+                    8. Show All Players
+                    9. Leave
                     ==========================================
                     """);
             System.out.print("Put your option: ");
@@ -73,11 +72,29 @@ public class TestPlayerManager {
                     var inputRecordUpdate = input.nextInt();
                     playerManager.setScorePlayer(inputNameUpdate,inputRecordUpdate);
                     break;
-                case 9:
+                case 5:
+                    input.nextLine();
+                    System.out.println("===========Get N best player's list by Scored=============");
+                    System.out.print("Enter your N players: ");
+                    var inputNPlayers = input.nextInt();
+                    playerManager.getNPlayersOrderByScored(inputNPlayers);
+                    break;
+                case 6:
+                    input.nextLine();
+                    System.out.println("===========Get best players' list by Scored=============");
+                    System.out.print("Enter your minimum Scored: ");
+                    var inputMinScored = input.nextInt();
+                    playerManager.getPlayersByMinScored(inputMinScored);
+                    break;
+                case 7:
+                    System.out.println("===========Get Player best Scored=============");
+                    playerManager.getBestPlayer();
+                    break;
+                case 8:
                     System.out.println("===========Show All Players=============");
                     playerManager.getAllPlayers();
                     break;
-                case 10:
+                case 9:
                     running = false;
                 default:
                     System.out.println("Please do write right option!");

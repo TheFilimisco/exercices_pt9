@@ -59,24 +59,21 @@ public class PlayerManager {
         System.out.println("Updated!: " + namePlayer);
     }
 
-
-    public ArrayList<Player> getBestPlayers(int scoredRange){
-        ArrayList<Player> bestPlayers = new ArrayList<>();
-        for (Player player: players){
-            if (player.getScore() > scoredRange){
-                bestPlayers.add(player);
-            }
-        }
-        return bestPlayers;
+    public void getNPlayersOrderByScored(int N){
+        players.sort(playerComparatorByScored.reversed());
+        var newList = players.subList(0,N);
+        newList.forEach(System.out::println);
     }
+
 
     public ArrayList<Player> getPlayersByMinScored(int minScored){
         ArrayList<Player> minPlayers = new ArrayList<>();
         for (Player player: players){
-            if (player.getScore() < minScored){
+            if (player.getScore() > minScored){
                 minPlayers.add(player);
             }
         }
+        minPlayers.forEach(System.out::println);
         return minPlayers;
     }
 
