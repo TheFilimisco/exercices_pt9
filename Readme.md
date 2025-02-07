@@ -139,4 +139,28 @@ funcionalitats:
   totes les funcionalitats funcionen correctament. Afegiu println’s perquè es vegi clarament el
   que s’està fent.
 
+# HashSet
+
+- add(E e):	Agrega un elemento si no está presente
+- clear():	Borra todos los elementos
+- clone():	Crea una copia del HashSet
+- contains(Object o):	Verifica si un elemento está en el HashSet
+- isEmpty():	Verifica si el HashSet está vacío
+- iterator():	Devuelve un iterador para recorrer el HashSet
+- remove(Object o):	Elimina un elemento si está presente
+- size():	Devuelve la cantidad de elementos
+- toArray():	Convierte el HashSet en un array
+
+## 1. Loteria (_[lottery](src/lottery)_)
+
+- Crea un sac amb boles d'una loteria. Aquest sac (Hashset) contindrà les boles del 0 al 100.
+
+- Paral·lelament has de crear una classe Jugador que estarà compost d'un dni i un "boleto"
+amb 4 números del 0 al 100 diferents.
+
+- Crea 4 jugadors amb 4 boletos random i simula una loteria que vagi traient nombres del sac
+creat anteriorment. Un cop un dels jugadors guanya (s'han tret els 4 nombres del jugador)
+s'acaba el joc i es treu el dni del guanyador
+
+
 
