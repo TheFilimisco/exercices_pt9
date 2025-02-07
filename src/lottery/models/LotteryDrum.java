@@ -45,7 +45,10 @@ public class LotteryDrum {
     }
 
 
-
-
-
+    @Override
+    public String toString() {
+        return "LotteryDrum{" +
+                "ballSet=" + ballSet +
+                '}';
+    }
 }

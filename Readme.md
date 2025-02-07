@@ -163,4 +163,54 @@ creat anteriorment. Un cop un dels jugadors guanya (s'han tret els 4 nombres del
 s'acaba el joc i es treu el dni del guanyador
 
 
+## 2. SCRUM_HashSet (_[scrumhashset](src/scrumhashset)_)
+
+- Fes un circuit amb diferents estructures de Hashset capaç de simular les fases per les que
+passa una tasca en un cicle d'SCRUM. Una tasca s'identifica per un nom i una descripció.
+
+- Cal tenir un conjunt de tasques de cada un d'aquests grups: TO BE DONE, DOING i
+DONE. Així doncs quan introduïm una tasca al sistema passa automàticament a TO BE
+DONE. Un cop s'està realitzant cal passar aquesta tasca de TO BE DONE a DOING, i un
+cop finalitzada passarà de DOING A DONE.
+
+- És necessari tenir aquestes opcions en el programa:
+  1. Introduir una tasca.
+  2. Passar de TO BE DONE A DOING
+  3. Passar de DOING A DONE
+  4. Mostrar l'estat actual dels tres conjunts de tasques.
+
+## 3 Sentence Similarity. (_[sentencesimilarity](src/sentencesimilarity)_)
+- 3.1 Preprocessing
+- 3.2 Intersection
+- 3.3 Union
+- 3.4 Sentece Similarity
+
+## 4. Seguiment del Jugadors (_[playerstracking](src/playerstracking)_)
+- Crea un programa per gestionar el seguiment dels jugadors d’un joc. Hi han dos tipus de
+jugadors, lladres i policies.
+- Requeriments:
+  1. Classe Player:
+     - name (nom del jugador).
+     - role (pot ser "Thief" o "Police").
+     - override de toString()
+  2. Classe Game:
+     - Dos HashSets:
+       - Un per a active players (jugadors actius que no estan eliminats).
+       - Un per a eliminated players (jugadors eliminats).
+     - Mètodes per:
+       - Afegir un jugador al joc.
+       - Eliminar un jugador pel seu nom (moure'l d'actius a eliminats).
+       - Comprovar si el joc ha acabat (o bé si tots els Civilians o totes les
+       Màfies estan eliminats).
+       - Mostrar l’estat actual dels jugadors actius i eliminats.
+  3. Classe GameTest:
+     - Simula les següents accions:
+     - Afegir jugadors 5 jugadors de cada rol.
+     - Eliminar jugadors.
+     - Comprovar l’estat del joc.
+     - Mostrar els jugadors actius i eliminats.
+
+
+
+
 
